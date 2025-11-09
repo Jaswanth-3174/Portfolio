@@ -36,21 +36,21 @@ const About = () => {
   ]
 
   return (
-    <section id="about" className="section-padding bg-gray-50 dark:bg-dark-bg">
+    <section id="about" className="section-padding bg-gray-50 dark:bg-dark-bg w-full overflow-x-hidden">
       <motion.div
         ref={ref}
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.6 }}
-        className="container-custom"
+        className="container-custom w-full max-w-full"
       >
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
           >
             About <span className="gradient-text">Me</span>
           </motion.h2>
@@ -62,7 +62,7 @@ const About = () => {
           ></motion.div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center mb-12 sm:mb-16">
           {/* Left - Image/Illustration */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -90,17 +90,18 @@ const About = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="px-4 sm:px-0"
           >
-            <h3 className="text-3xl font-bold mb-4">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-4">
               I'm a Software Development Engineer
             </h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
               With a passion for creating elegant solutions to complex problems, I specialize
               in building scalable web applications and services. My journey in software
               development has equipped me with a diverse skill set spanning frontend, backend,
               and cloud technologies.
             </p>
-            <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
               I thrive in collaborative environments where innovation meets execution. Whether
               it's architecting microservices, optimizing database queries, or crafting intuitive
               user interfaces, I'm committed to delivering high-quality solutions that make a
@@ -128,22 +129,22 @@ const About = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16"
         >
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
               whileHover={{ scale: 1.05, y: -5 }}
-              className="text-center p-6 rounded-xl bg-white dark:bg-dark-card shadow-lg"
+              className="text-center p-4 sm:p-6 rounded-xl bg-white dark:bg-dark-card shadow-lg"
             >
-              <div className="text-4xl font-bold gradient-text mb-2">{stat.value}</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
+              <div className="text-3xl sm:text-4xl font-bold gradient-text mb-2">{stat.value}</div>
+              <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
 
         {/* Highlights */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {highlights.map((highlight, index) => (
             <motion.div
               key={highlight.title}

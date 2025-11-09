@@ -63,13 +63,13 @@ const Contact = () => {
   ]
 
   return (
-    <section id="contact" className="section-padding bg-gray-50 dark:bg-dark-bg">
+    <section id="contact" className="section-padding bg-white dark:bg-dark-card w-full overflow-x-hidden">
       <motion.div
         ref={ref}
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.6 }}
-        className="container-custom"
+        className="container-custom w-full max-w-full"
       >
         {/* Section Header */}
         <div className="text-center mb-16">

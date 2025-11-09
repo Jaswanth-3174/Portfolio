@@ -21,9 +21,9 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-white dark:bg-dark-card border-t border-gray-200 dark:border-dark-border">
-      <div className="container-custom py-12 px-4">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+    <footer className="bg-white dark:bg-dark-card border-t border-gray-200 dark:border-dark-border w-full overflow-x-hidden">
+      <div className="container-custom py-12 w-full max-w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
             <motion.a

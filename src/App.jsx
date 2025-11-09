@@ -5,6 +5,7 @@ import About from './components/About'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Experience from './components/Experience'
+import Education from './components/Education'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -49,16 +50,17 @@ function App() {
   }
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${
+    <div className={`min-h-screen transition-colors duration-300 overflow-x-hidden w-full ${
       darkMode ? 'bg-dark-bg text-white' : 'bg-gray-50 text-gray-900'
     }`}>
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <main>
+      <main className="overflow-x-hidden w-full">
         <Hero />
         <About />
         <Skills />
         <Projects />
         <Experience />
+        <Education />
         <Contact />
       </main>
       <Footer />

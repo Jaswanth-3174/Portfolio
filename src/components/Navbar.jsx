@@ -12,6 +12,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
+    { name: 'Education', href: '#education' },
     { name: 'Contact', href: '#contact' },
   ]
 
@@ -27,18 +28,18 @@ const Navbar = ({ darkMode, setDarkMode }) => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full ${
         isScrolled
           ? 'bg-white/80 dark:bg-dark-card/80 backdrop-blur-lg shadow-lg'
           : 'bg-transparent'
       }`}
     >
-      <div className="container-custom">
-        <div className="flex items-center justify-between h-16 md:h-20">
+      <div className="container-custom w-full max-w-full">
+        <div className="flex items-center justify-between h-16 md:h-20 w-full px-2">
           {/* Logo */}
           <motion.a
             href="#home"
-            className="text-2xl font-bold gradient-text font-mono"
+            className="text-xl sm:text-2xl font-bold gradient-text font-mono"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

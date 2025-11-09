@@ -21,10 +21,10 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 w-full"
     >
       {/* Animated Background */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
         <div className="absolute top-40 right-10 w-72 h-72 bg-primary-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
         <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{ animationDelay: '4s' }}></div>
@@ -35,7 +35,7 @@ const Hero = () => {
         variants={containerVariants}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        className="container-custom text-center px-4"
+        className="container-custom text-center w-full max-w-full"
       >
         <motion.div variants={itemVariants} className="mb-6">
           <span className="inline-block px-4 py-2 rounded-full bg-primary-500/10 text-primary-500 font-mono text-sm mb-4">
@@ -45,17 +45,17 @@ const Hero = () => {
 
         <motion.h1
           variants={itemVariants}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 px-2"
         >
           Hi, I'm{' '}
-          <span className="gradient-text">Your Name</span>
+          <span className="gradient-text whitespace-nowrap">Jaswanth S</span>
         </motion.h1>
 
-        <motion.div variants={itemVariants} className="mb-8">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold mb-4">
+        <motion.div variants={itemVariants} className="mb-8 px-2">
+          <h2 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-semibold mb-4">
             Software Development Engineer
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto px-4">
             Passionate about building scalable applications, solving complex problems,
             and creating exceptional user experiences with modern technologies.
           </p>
@@ -74,7 +74,8 @@ const Hero = () => {
             <FiMail /> Get In Touch
           </motion.a>
           
-          <motion.a
+          {/* Download Resume - Commented out for now */}
+          {/* <motion.a
             href="/resume.pdf"
             download
             className="px-8 py-3 border-2 border-primary-500 text-primary-500 rounded-lg font-medium hover:bg-primary-500 hover:text-white transition-colors flex items-center gap-2"
@@ -82,7 +83,7 @@ const Hero = () => {
             whileTap={{ scale: 0.95 }}
           >
             <FiDownload /> Download Resume
-          </motion.a>
+          </motion.a> */}
         </motion.div>
 
         <motion.div
@@ -113,13 +114,13 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-20 left-1/2 transform -translate-x-1/2"
         >
           <motion.a
             href="#about"
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 2 }}
-            className="text-gray-400 hover:text-primary-500 transition-colors"
+            className="text-gray-400 hover:text-primary-500 transition-colors block"
           >
             <FiArrowDown className="text-3xl" />
           </motion.a>

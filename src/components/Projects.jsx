@@ -71,13 +71,13 @@ const Projects = () => {
     : projects.filter(project => project.category === activeFilter)
 
   return (
-    <section id="projects" className="section-padding bg-gray-50 dark:bg-dark-bg">
+    <section id="projects" className="section-padding bg-gray-50 dark:bg-dark-bg w-full overflow-x-hidden">
       <motion.div
         ref={ref}
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.6 }}
-        className="container-custom"
+        className="container-custom w-full max-w-full"
       >
         {/* Section Header */}
         <div className="text-center mb-16">
