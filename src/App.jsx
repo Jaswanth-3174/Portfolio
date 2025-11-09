@@ -1,0 +1,69 @@
+import { useState, useEffect } from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import About from './components/About'
+import Skills from './components/Skills'
+import Projects from './components/Projects'
+import Experience from './components/Experience'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
+
+function App() {
+  const [darkMode, setDarkMode] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    // Simulate loading
+    setTimeout(() => setIsLoading(false), 1500)
+
+    // Check for saved theme preference or default to dark mode
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme) {
+      setDarkMode(savedTheme === 'dark')
+    }
+  }, [])
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('theme', 'dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('theme', 'light')
+    }
+  }, [darkMode])
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-dark-bg flex items-center justify-center">
+        <div className="text-center">
+          <div className="loading-dots text-primary-500 mb-4">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <p className="text-white/60 font-mono">Loading portfolio...</p>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className={`min-h-screen transition-colors duration-300 ${
+      darkMode ? 'bg-dark-bg text-white' : 'bg-gray-50 text-gray-900'
+    }`}>
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  )
+}
+
+export default App
