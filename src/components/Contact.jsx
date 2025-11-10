@@ -39,26 +39,20 @@ const Contact = () => {
     {
       icon: FiMail,
       title: 'Email',
-      value: 'your.email@example.com',
-      link: 'mailto:your.email@example.com'
-    },
-    {
-      icon: FiPhone,
-      title: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
+      value: 's.jaswanth2004@gmail.com',
+      link: 'mailto:s.jaswanth2004@gmail.com'
     },
     {
       icon: FiMapPin,
       title: 'Location',
-      value: 'San Francisco, CA',
+      value: 'India',
       link: null
     }
   ]
 
   const socialLinks = [
-    { icon: FiGithub, href: 'https://github.com', label: 'GitHub' },
-    { icon: FiLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+    { icon: FiGithub, href: 'https://github.com/Jaswanth-3174', label: 'GitHub' },
+    { icon: FiLinkedin, href: 'https://www.linkedin.com/in/jaswanths2004/', label: 'LinkedIn' },
     { icon: FiTwitter, href: 'https://twitter.com', label: 'Twitter' }
   ]
 

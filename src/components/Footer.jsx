@@ -14,10 +14,10 @@ const Footer = () => {
   ]
 
   const socialLinks = [
-    { icon: FiGithub, href: 'https://github.com', label: 'GitHub' },
-    { icon: FiLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+    { icon: FiGithub, href: 'https://github.com/Jaswanth-3174', label: 'GitHub' },
+    { icon: FiLinkedin, href: 'https://www.linkedin.com/in/jaswanths2004/', label: 'LinkedIn' },
     { icon: FiTwitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: FiMail, href: 'mailto:your.email@example.com', label: 'Email' },
+    { icon: FiMail, href: 'mailto:s.jaswanth2004@gmail.com', label: 'Email' },
   ]
 
   return (
@@ -106,9 +106,9 @@ const Footer = () => {
                 transition={{ repeat: Infinity, duration: 1.5 }}
                 className="inline-block text-red-500"
               >
-                <FiHeart className="inline" />
-              </motion.span>{' '}
-              by Your Name
+              <FiHeart className="inline" />
+            </motion.span>{' '}
+              by Jaswanth S
             </p>
             <div className="flex gap-6">
               <motion.a

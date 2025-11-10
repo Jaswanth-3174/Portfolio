@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { FiCode, FiDatabase, FiCloud, FiTool } from 'react-icons/fi'
+import profileImage from '../assets/profile.jpg'
 
 const About = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
@@ -71,15 +72,12 @@ const About = () => {
             className="relative"
           >
             <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary-500 to-purple-600 p-1">
-              <div className="w-full h-full rounded-2xl bg-white dark:bg-dark-card flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="text-6xl mb-4">👨‍💻</div>
-                  <p className="font-mono text-sm text-gray-600 dark:text-gray-400">
-                    // Building the future,
-                    <br />
-                    one line at a time
-                  </p>
-                </div>
+              <div className="w-full h-full rounded-2xl overflow-hidden">
+                <img 
+                  src={profileImage} 
+                  alt="Jaswanth S - Software Development Engineer" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
             <div className="absolute -z-10 -top-4 -right-4 w-full h-full rounded-2xl bg-primary-500/20 blur-xl"></div>
