@@ -1,14 +1,13 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import {
-  SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiPython,
-  SiMongodb, SiPostgresql, SiAmazonaws, SiDocker, SiKubernetes,
-  SiGit, SiGraphql, SiRedis, SiJest, SiTailwindcss, SiExpress,
-  SiNextdotjs, SiVuedotjs, SiDjango, SiFastapi, SiMysql,
-  SiFirebase, SiJenkins, SiTerraform, SiLinux, SiNginx,
-  SiRabbitmq, SiElasticsearch
+  SiJavascript, SiReact, SiNodedotjs, SiPython,
+  SiPostgresql, SiAmazonaws, SiDocker,
+  SiGit, SiBootstrap, SiGithub, SiMysql,
+  SiJenkins, SiLinux, SiHtml5, SiCss3, SiSolidity
 } from 'react-icons/si'
-import { FiBox, FiServer } from 'react-icons/fi'
+import { FaJava } from 'react-icons/fa'
+import { FiBox, FiServer, FiCode } from 'react-icons/fi'
 
 const Skills = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
@@ -19,10 +18,11 @@ const Skills = () => {
       color: 'from-blue-500 to-cyan-500',
       iconColor: 'text-blue-500',
       skills: [
-        { name: 'JavaScript', icon: SiJavascript, level: 95 },
-        { name: 'TypeScript', icon: SiTypescript, level: 90 },
-        { name: 'React', icon: SiReact, level: 95 },
-        { name: 'Tailwind CSS', icon: SiTailwindcss, level: 90 },
+        { name: 'JavaScript', icon: SiJavascript },
+        { name: 'React', icon: SiReact },
+        { name: 'Bootstrap', icon: SiBootstrap },
+        { name: 'HTML5', icon: SiHtml5 },
+        { name: 'CSS3', icon: SiCss3 },
       ]
     },
     {
@@ -30,10 +30,11 @@ const Skills = () => {
       color: 'from-green-500 to-emerald-500',
       iconColor: 'text-green-500',
       skills: [
-        { name: 'Node.js', icon: SiNodedotjs, level: 90 },
-        { name: 'Python', icon: SiPython, level: 85 },
-        { name: 'GraphQL', icon: SiGraphql, level: 80 },
-        { name: 'Redis', icon: SiRedis, level: 75 },
+        { name: 'Node.js', icon: SiNodedotjs },
+        { name: 'Python', icon: SiPython },
+        { name: 'Java', icon: FaJava },
+        { name: 'C', icon: FiCode, isCustom: true },
+        { name: 'Solidity', icon: SiSolidity },
       ]
     },
     {
@@ -41,8 +42,8 @@ const Skills = () => {
       color: 'from-purple-500 to-pink-500',
       iconColor: 'text-purple-500',
       skills: [
-        { name: 'MongoDB', icon: SiMongodb, level: 90 },
-        { name: 'PostgreSQL', icon: SiPostgresql, level: 85 },
+        { name: 'MySQL', icon: SiMysql },
+        { name: 'PostgreSQL', icon: SiPostgresql },
       ]
     },
     {
@@ -50,11 +51,11 @@ const Skills = () => {
       color: 'from-orange-500 to-red-500',
       iconColor: 'text-orange-500',
       skills: [
-        { name: 'AWS', icon: SiAmazonaws, level: 85 },
-        { name: 'Docker', icon: SiDocker, level: 90 },
-        { name: 'Kubernetes', icon: SiKubernetes, level: 75 },
-        { name: 'Git', icon: SiGit, level: 95 },
-        { name: 'Jest', icon: SiJest, level: 85 },
+        { name: 'AWS', icon: SiAmazonaws },
+        { name: 'Docker', icon: SiDocker },
+        { name: 'Git', icon: SiGit },
+        { name: 'GitHub', icon: SiGithub },
+        { name: 'Jenkins', icon: SiJenkins },
       ]
     }
   ]
@@ -115,7 +116,13 @@ const Skills = () => {
                         whileHover={{ y: -4, scale: 1.15 }}
                         transition={{ duration: 0.3, type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        <skill.icon className={`text-4xl sm:text-5xl ${category.iconColor} hover:drop-shadow-lg transition-all`} />
+                        {skill.isCustom && skill.name === 'C' ? (
+                          <div className={`text-4xl sm:text-5xl font-bold ${category.iconColor} hover:drop-shadow-lg transition-all flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-gradient-to-br from-blue-500/10 to-cyan-500/10`}>
+                            C
+                          </div>
+                        ) : (
+                          <skill.icon className={`text-4xl sm:text-5xl ${category.iconColor} hover:drop-shadow-lg transition-all`} />
+                        )}
                       </motion.div>
                       <span className="font-medium text-xs sm:text-sm">{skill.name}</span>
                     </div>
@@ -136,19 +143,7 @@ const Skills = () => {
           <h4 className="text-lg sm:text-xl font-semibold mb-5 sm:mb-6">Other Technologies</h4>
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3 sm:gap-4">
             {[
-              { name: 'Express.js', icon: SiExpress },
-              { name: 'Next.js', icon: SiNextdotjs },
-              { name: 'Vue.js', icon: SiVuedotjs },
-              { name: 'Django', icon: SiDjango },
-              { name: 'FastAPI', icon: SiFastapi },
-              { name: 'MySQL', icon: SiMysql },
-              { name: 'Firebase', icon: SiFirebase },
-              { name: 'Jenkins', icon: SiJenkins },
-              { name: 'Terraform', icon: SiTerraform },
               { name: 'Linux', icon: SiLinux },
-              { name: 'Nginx', icon: SiNginx },
-              { name: 'RabbitMQ', icon: SiRabbitmq },
-              { name: 'Elasticsearch', icon: SiElasticsearch },
               { name: 'Microservices', icon: FiBox },
               { name: 'REST APIs', icon: FiServer },
             ].map((tech, index) => (

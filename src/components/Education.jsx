@@ -8,11 +8,11 @@ const Education = () => {
 
   const education = [
     {
-      degree: 'Bachelor of Technology in Computer Science',
-      institution: 'Your University Name',
-      location: 'City, Country',
-      period: '2019 - 2023',
-      grade: 'CGPA: 8.5/10',
+      degree: 'Master of Technology in Computer Science',
+      institution: 'Sri Krishna College of Engineering and Technology - SKCET',
+      location: 'Coimbatore, India',
+      period: '2021 - 2026',
+      grade: 'CGPA: 8.1/10',
       description: 'Focused on software engineering, data structures, algorithms, and full-stack development.',
       achievements: [
         'Dean\'s List for Academic Excellence',
@@ -22,11 +22,11 @@ const Education = () => {
       color: 'from-blue-500 to-cyan-500'
     },
     {
-      degree: 'Higher Secondary Education (12th Grade)',
-      institution: 'Your School Name',
-      location: 'City, Country',
-      period: '2017 - 2019',
-      grade: 'Percentage: 92%',
+      degree: 'Higher Secondary Education',
+      institution: 'Velammal Vidyalaya',
+      location: 'Madurai, India',
+      period: '2019 - 2021',
+      grade: 'Percentage: 83%',
       description: 'Specialized in Mathematics, Physics, and Computer Science.',
       achievements: [
         'School topper in Computer Science',

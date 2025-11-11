@@ -67,7 +67,7 @@ const Hero = () => {
             Hi, I'm{' '}
           </span>
           <span className="whitespace-nowrap bg-gradient-to-r from-primary-600 via-purple-600 to-pink-600 dark:from-primary-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
-            Jaswanth S
+            Jaswanth
           </span>
         </motion.h1>
 

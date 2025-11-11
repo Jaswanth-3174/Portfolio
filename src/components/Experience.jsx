@@ -6,39 +6,39 @@ const Experience = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
 
   const experiences = [
+    // {
+    //   company: 'Tech Company Inc.',
+    //   position: 'Senior Software Engineer',
+    //   location: 'San Francisco, CA',
+    //   period: '2022 - Present',
+    //   description: 'Leading development of microservices architecture and mentoring junior developers.',
+    //   achievements: [
+    //     'Architected and implemented a scalable microservices platform serving 1M+ users',
+    //     'Reduced API response time by 60% through optimization and caching strategies',
+    //     'Led a team of 5 developers in migrating legacy systems to modern tech stack',
+    //     'Implemented CI/CD pipelines reducing deployment time by 75%'
+    //   ],
+    //   technologies: ['React', 'Node.js', 'AWS', 'Docker', 'Kubernetes']
+    // },
     {
-      company: 'Tech Company Inc.',
-      position: 'Senior Software Engineer',
-      location: 'San Francisco, CA',
-      period: '2022 - Present',
-      description: 'Leading development of microservices architecture and mentoring junior developers.',
-      achievements: [
-        'Architected and implemented a scalable microservices platform serving 1M+ users',
-        'Reduced API response time by 60% through optimization and caching strategies',
-        'Led a team of 5 developers in migrating legacy systems to modern tech stack',
-        'Implemented CI/CD pipelines reducing deployment time by 75%'
-      ],
-      technologies: ['React', 'Node.js', 'AWS', 'Docker', 'Kubernetes']
-    },
-    {
-      company: 'Startup Solutions',
-      position: 'Full Stack Developer',
-      location: 'New York, NY',
-      period: '2020 - 2022',
-      description: 'Built and maintained web applications using modern JavaScript frameworks.',
+      company: 'Zoho Corp',
+      position: 'Technical Trainee',
+      location: 'Chennai, India',
+      period: '11/2025 - Present',
+      description: 'Backend Developer Trainee – Zoho (ManageEngine Division)',
       achievements: [
         'Developed 10+ features for the main product increasing user engagement by 40%',
         'Integrated third-party APIs and payment gateways for seamless user experience',
         'Collaborated with UX team to implement responsive designs across all platforms',
         'Established coding standards and best practices for the development team'
       ],
-      technologies: ['Vue.js', 'Express', 'MongoDB', 'Redis']
+      technologies: ['Java','Rest API', 'JWT']
     },
     {
-      company: 'Digital Agency Co.',
-      position: 'Junior Developer',
-      location: 'Boston, MA',
-      period: '2019 - 2020',
+      company: 'Zoho Corp',
+      position: 'Intern',
+      location: 'Madurai, India',
+      period: '05/2025 - 06/2025',
       description: 'Contributed to client projects and learned modern web development practices.',
       achievements: [
         'Delivered 15+ client projects with 100% on-time delivery rate',
@@ -46,7 +46,7 @@ const Experience = () => {
         'Participated in code reviews and adopted industry best practices',
         'Assisted in training new interns and creating documentation'
       ],
-      technologies: ['JavaScript', 'PHP', 'MySQL', 'WordPress']
+      technologies: ['JavaScript', 'Java', 'SQL', 'Jenkins', 'Zoho Analytics']
     }
   ]
 
