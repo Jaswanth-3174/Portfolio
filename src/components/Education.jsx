@@ -173,9 +173,9 @@ const Education = () => {
           <h3 className="text-2xl font-bold mb-6">Certifications & Courses</h3>
           <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
             {[
-              'AWS Certified Solutions Architect',
-              'Full Stack Web Development',
+              'Multicloud Architect Professional',
               'Data Structures & Algorithms',
+              'Generative AI',
             ].map((cert, index) => (
               <motion.div
                 key={cert}

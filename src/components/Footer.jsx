@@ -16,7 +16,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: FiGithub, href: 'https://github.com/Jaswanth-3174', label: 'GitHub' },
     { icon: FiLinkedin, href: 'https://www.linkedin.com/in/jaswanths2004/', label: 'LinkedIn' },
-    { icon: FiTwitter, href: 'https://twitter.com', label: 'Twitter' },
+    // { icon: FiTwitter, href: 'https://twitter.com', label: 'Twitter' },
     { icon: FiMail, href: 'mailto:s.jaswanth2004@gmail.com', label: 'Email' },
   ]
 

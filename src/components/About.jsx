@@ -7,10 +7,10 @@ const About = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
 
   const stats = [
-    { label: 'Years Experience', value: '3+' },
-    { label: 'Projects Completed', value: '50+' },
-    { label: 'Technologies', value: '20+' },
-    { label: 'Happy Clients', value: '30+' },
+    { label: 'Years Experience', value: '2+' },
+    { label: 'Projects Completed', value: '10+' },
+    { label: 'Technologies', value: '15+' },
+    // { label: 'Happy Clients', value: '30+' },
   ]
 
   const highlights = [
@@ -107,7 +107,7 @@ const About = () => {
             </p>
             
             <div className="flex flex-wrap gap-3">
-              {['React', 'Node.js', 'Python', 'AWS', 'Docker', 'MongoDB'].map((tech, index) => (
+              {['Node.js', 'Java', 'AWS', 'Python', 'MySQL', 'React.js'].map((tech, index) => (
                 <motion.span
                   key={tech}
                   initial={{ opacity: 0, scale: 0 }}
@@ -127,18 +127,20 @@ const About = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16"
+          className="flex justify-center mb-12 sm:mb-16"
         >
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              whileHover={{ scale: 1.05, y: -5 }}
-              className="text-center p-4 sm:p-6 rounded-xl bg-white dark:bg-dark-card shadow-lg"
-            >
-              <div className="text-3xl sm:text-4xl font-bold gradient-text mb-2">{stat.value}</div>
-              <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
-            </motion.div>
-          ))}
+          <div className="grid grid-cols-3 gap-4 sm:gap-6 max-w-4xl">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="text-center p-4 sm:p-6 rounded-xl bg-white dark:bg-dark-card shadow-lg"
+              >
+                <div className="text-3xl sm:text-4xl font-bold gradient-text mb-2">{stat.value}</div>
+                <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
         {/* Highlights */}
