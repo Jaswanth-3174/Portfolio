@@ -1,167 +1,109 @@
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { FiBriefcase, FiCalendar, FiMapPin } from 'react-icons/fi'
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+import { FiBriefcase } from 'react-icons/fi'
+
+const experiences = [
+  {
+    title: 'Technical Trainee',
+    company_name: 'Zoho Corp',
+    iconBg: '#383E56',
+    date: 'November 2025 - Present',
+    points: [
+      'Backend Developer Trainee working on ManageEngine Division products.',
+      'Developing and maintaining enterprise applications using Java and REST APIs.',
+      'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
+      'Implementing secure authentication mechanisms using JWT and ensuring application security.',
+      'Participating in code reviews and providing constructive feedback to other developers.',
+    ],
+  },
+  {
+    title: 'Intern',
+    company_name: 'Zoho Corp',
+    iconBg: '#E6DEDD',
+    date: 'May 2025 - June 2025',
+    points: [
+      'Contributed to client projects and learned modern web development practices.',
+      'Developed web applications using JavaScript and Java technologies.',
+      'Worked with SQL databases and implemented data analysis solutions using Zoho Analytics.',
+      'Implemented CI/CD pipelines using Jenkins for automated deployments.',
+      'Delivered 15+ client projects with 100% on-time delivery rate.',
+    ],
+  },
+]
+
+const ExperienceCard = ({ experience }) => {
+  return (
+    <VerticalTimelineElement
+      contentStyle={{
+        background: "#1d1836",
+        color: "#fff",
+      }}
+      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      date={experience.date}
+      iconStyle={{ background: experience.iconBg }}
+      icon={
+        <div className='flex justify-center items-center w-full h-full'>
+          <FiBriefcase className="w-[60%] h-[60%] text-white" />
+        </div>
+      }
+    >
+      <div>
+        <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
+        <p
+          className='text-secondary text-[16px] font-semibold'
+          style={{ margin: 0 }}
+        >
+          {experience.company_name}
+        </p>
+      </div>
+
+      <ul className='mt-5 list-disc ml-5 space-y-2'>
+        {experience.points.map((point, index) => (
+          <li
+            key={`experience-point-${index}`}
+            className='text-white-100 text-[14px] pl-1 tracking-wider'
+          >
+            {point}
+          </li>
+        ))}
+      </ul>
+    </VerticalTimelineElement>
+  );
+};
 
 const Experience = () => {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
-
-  const experiences = [
-    // {
-    //   company: 'Tech Company Inc.',
-    //   position: 'Senior Software Engineer',
-    //   location: 'San Francisco, CA',
-    //   period: '2022 - Present',
-    //   description: 'Leading development of microservices architecture and mentoring junior developers.',
-    //   achievements: [
-    //     'Architected and implemented a scalable microservices platform serving 1M+ users',
-    //     'Reduced API response time by 60% through optimization and caching strategies',
-    //     'Led a team of 5 developers in migrating legacy systems to modern tech stack',
-    //     'Implemented CI/CD pipelines reducing deployment time by 75%'
-    //   ],
-    //   technologies: ['React', 'Node.js', 'AWS', 'Docker', 'Kubernetes']
-    // },
-    {
-      company: 'Zoho Corp',
-      position: 'Technical Trainee',
-      location: 'Chennai, India',
-      period: '11/2025 - Present',
-      description: 'Backend Developer Trainee – Zoho (ManageEngine Division)',
-      achievements: [
-        'Developed 10+ features for the main product increasing user engagement by 40%',
-        'Integrated third-party APIs and payment gateways for seamless user experience',
-        'Collaborated with UX team to implement responsive designs across all platforms',
-        'Established coding standards and best practices for the development team'
-      ],
-      technologies: ['Java','Rest API', 'JWT']
-    },
-    {
-      company: 'Zoho Corp',
-      position: 'Intern',
-      location: 'Madurai, India',
-      period: '05/2025 - 06/2025',
-      description: 'Contributed to client projects and learned modern web development practices.',
-      achievements: [
-        'Delivered 15+ client projects with 100% on-time delivery rate',
-        'Improved website performance scores by implementing optimization techniques',
-        'Participated in code reviews and adopted industry best practices',
-        'Assisted in training new interns and creating documentation'
-      ],
-      technologies: ['JavaScript', 'Java', 'SQL', 'Jenkins', 'Zoho Analytics']
-    }
-  ]
-
   return (
     <section id="experience" className="section-padding bg-white dark:bg-dark-card w-full overflow-x-hidden">
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0 }}
-        animate={inView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 0.6 }}
-        className="container-custom w-full max-w-full"
-      >
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5 }}
-            className="text-4xl md:text-5xl font-bold mb-4"
-          >
-            Work <span className="gradient-text">Experience</span>
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={inView ? { opacity: 1, scaleX: 1 } : { opacity: 0, scaleX: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="w-20 h-1 bg-primary-500 mx-auto rounded-full"
-          ></motion.div>
+      <div className="container-custom w-full max-w-full">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 uppercase tracking-wider text-center mb-2">
+            What I have done so far
+          </p>
+          <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] text-center mb-10">
+            Work Experience.
+          </h2>
+        </motion.div>
+
+        <div className='mt-20 flex flex-col'>
+          <VerticalTimeline>
+            {experiences.map((experience, index) => (
+              <ExperienceCard
+                key={`experience-${index}`}
+                experience={experience}
+              />
+            ))}
+          </VerticalTimeline>
         </div>
-
-        {/* Timeline */}
-        <div className="max-w-4xl mx-auto">
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={exp.company}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="relative pl-8 pb-12 border-l-2 border-primary-500/30 last:pb-0"
-            >
-              {/* Timeline Dot */}
-              <div className="absolute left-0 top-0 w-4 h-4 -translate-x-[9px] rounded-full bg-primary-500 ring-4 ring-white dark:ring-dark-card" />
-
-              {/* Content Card */}
-              <motion.div
-                whileHover={{ scale: 1.02, x: 10 }}
-                className="p-6 rounded-xl bg-gray-50 dark:bg-dark-bg shadow-lg"
-              >
-                {/* Header */}
-                <div className="mb-4">
-                  <div className="flex flex-wrap items-start justify-between gap-4 mb-2">
-                    <div>
-                      <h3 className="text-2xl font-bold mb-1">{exp.position}</h3>
-                      <div className="flex items-center gap-2 text-primary-500 font-semibold">
-                        <FiBriefcase className="text-lg" />
-                        <span>{exp.company}</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400">
-                    <div className="flex items-center gap-2">
-                      <FiCalendar />
-                      <span>{exp.period}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <FiMapPin />
-                      <span>{exp.location}</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Description */}
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  {exp.description}
-                </p>
-
-                {/* Achievements */}
-                <div className="mb-4">
-                  <h4 className="font-semibold mb-2">Key Achievements:</h4>
-                  <ul className="space-y-2">
-                    {exp.achievements.map((achievement, i) => (
-                      <motion.li
-                        key={i}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                        transition={{ duration: 0.3, delay: index * 0.2 + i * 0.1 }}
-                        className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400"
-                      >
-                        <span className="text-primary-500 mt-1">▸</span>
-                        <span>{achievement}</span>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2">
-                  {exp.technologies.map((tech, i) => (
-                    <motion.span
-                      key={tech}
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-                      transition={{ duration: 0.3, delay: index * 0.2 + 0.5 + i * 0.05 }}
-                      className="px-3 py-1 text-xs rounded-full bg-primary-500/10 text-primary-500 font-medium"
-                    >
-                      {tech}
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
+      </div>
     </section>
   )
 }

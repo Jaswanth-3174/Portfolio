@@ -20,6 +20,8 @@ export default {
           800: '#075985',
           900: '#0c4a6e',
         },
+        secondary: '#aaa6c3',
+        tertiary: '#151030',
         dark: {
           bg: '#0a0a0a',
           card: '#141414',
