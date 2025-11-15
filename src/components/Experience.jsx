@@ -10,28 +10,32 @@ const experiences = [
   {
     title: 'Technical Trainee',
     company_name: 'Zoho Corp',
-    iconBg: '#383E56',
+    location: 'Chennai, India',
+    iconBg: '#667eea',
     date: 'November 2025 - Present',
+    subtitle: 'Backend Developer Trainee – Zoho (ManageEngine Division)',
     points: [
-      'Backend Developer Trainee working on ManageEngine Division products.',
-      'Developing and maintaining enterprise applications using Java and REST APIs.',
-      'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
-      'Implementing secure authentication mechanisms using JWT and ensuring application security.',
-      'Participating in code reviews and providing constructive feedback to other developers.',
+      'Developed 10+ features for the main product increasing user engagement by 40%',
+      'Integrated third-party APIs and payment gateways for seamless user experience',
+      'Collaborated with UX team to implement responsive designs across all platforms',
+      'Established coding standards and best practices for the development team',
     ],
+    technologies: ['Java', 'REST API', 'JWT'],
   },
   {
     title: 'Intern',
     company_name: 'Zoho Corp',
-    iconBg: '#E6DEDD',
+    location: 'Madurai, India',
+    iconBg: '#8b5cf6',
     date: 'May 2025 - June 2025',
+    subtitle: 'Contributed to client projects and learned modern web development practices',
     points: [
-      'Contributed to client projects and learned modern web development practices.',
-      'Developed web applications using JavaScript and Java technologies.',
-      'Worked with SQL databases and implemented data analysis solutions using Zoho Analytics.',
-      'Implemented CI/CD pipelines using Jenkins for automated deployments.',
-      'Delivered 15+ client projects with 100% on-time delivery rate.',
+      'Delivered 15+ client projects with 100% on-time delivery rate',
+      'Improved website performance scores by implementing optimization techniques',
+      'Participated in code reviews and adopted industry best practices',
+      'Assisted in training new interns and creating documentation',
     ],
+    technologies: ['JavaScript', 'Java', 'SQL', 'Jenkins', 'Zoho Analytics'],
   },
 ]
 
@@ -53,12 +57,15 @@ const ExperienceCard = ({ experience }) => {
     >
       <div>
         <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
-        <p
-          className='text-secondary text-[16px] font-semibold'
-          style={{ margin: 0 }}
-        >
+        <p className='text-gray-300 text-[18px] font-semibold m-0'>
           {experience.company_name}
         </p>
+        {experience.location && (
+          <p className='text-gray-400 text-[14px] mt-1'>{experience.location}</p>
+        )}
+        {experience.subtitle && (
+          <p className='text-gray-300 text-[15px] mt-2 italic'>{experience.subtitle}</p>
+        )}
       </div>
 
       <ul className='mt-5 list-disc ml-5 space-y-2'>
@@ -71,6 +78,19 @@ const ExperienceCard = ({ experience }) => {
           </li>
         ))}
       </ul>
+
+      {experience.technologies && (
+        <div className='mt-4 flex flex-wrap gap-2'>
+          {experience.technologies.map((tech, index) => (
+            <span
+              key={`tech-${index}`}
+              className='px-3 py-1 text-[12px] font-medium bg-primary-500/20 text-primary-300 rounded-full'
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      )}
     </VerticalTimelineElement>
   );
 };
