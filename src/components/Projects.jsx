@@ -152,37 +152,47 @@ const Projects = () => {
         transition={{ duration: 0.6 }}
         className="container-custom w-full max-w-full"
       >
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-2">
-            My work
-          </p>
-          <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
-            Projects.
-          </h2>
-        </motion.div>
-
-        <div className='w-full flex'>
+        {/* Section Header */}
+        <div className="text-center mb-12 sm:mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5 }}
+            className="text-4xl md:text-5xl font-bold mb-4"
+          >
+            My <span className="gradient-text">Projects</span>
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={inView ? { opacity: 1, scaleX: 1 } : { opacity: 0, scaleX: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="w-20 h-1 bg-primary-500 mx-auto rounded-full"
+          ></motion.div>
           <motion.p
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.1 }}
-            className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
+            animate={inView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
           >
-            Following projects showcases my skills and experience through
-            real-world examples of my work. Each project is briefly described with
-            links to code repositories and live demos in it. It reflects my
-            ability to solve complex problems, work with different technologies,
-            and manage projects effectively.
+            Real-world projects showcasing problem-solving and technical expertise
           </motion.p>
         </div>
 
-        <div className='mt-20 flex flex-wrap gap-7'>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.1 }}
+          className='mt-8 text-gray-600 dark:text-gray-400 text-base sm:text-lg max-w-4xl mx-auto text-center leading-relaxed'
+        >
+          Following projects showcase my skills and experience through
+          real-world examples of my work. Each project is briefly described with
+          links to code repositories and live demos. It reflects my
+          ability to solve complex problems, work with different technologies,
+          and manage projects effectively.
+        </motion.p>
+
+        <div className='mt-20 flex flex-wrap gap-7 justify-center'>
           {projects.map((project, index) => (
             <ProjectCard key={`project-${index}`} index={index} {...project} />
           ))}

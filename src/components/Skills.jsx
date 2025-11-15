@@ -12,52 +12,25 @@ import { FiBox, FiServer, FiCode } from 'react-icons/fi'
 const Skills = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
 
-  const skillCategories = [
-    {
-      title: 'Frontend',
-      color: 'from-blue-500 to-cyan-500',
-      iconColor: 'text-blue-500',
-      skills: [
-        { name: 'JavaScript', icon: SiJavascript },
-        { name: 'React', icon: SiReact },
-        { name: 'Bootstrap', icon: SiBootstrap },
-        { name: 'HTML5', icon: SiHtml5 },
-        { name: 'CSS3', icon: SiCss3 },
-      ]
-    },
-    {
-      title: 'Backend',
-      color: 'from-green-500 to-emerald-500',
-      iconColor: 'text-green-500',
-      skills: [
-        { name: 'Node.js', icon: SiNodedotjs },
-        { name: 'Python', icon: SiPython },
-        { name: 'Java', icon: FaJava },
-        { name: 'C', icon: FiCode, isCustom: true },
-        { name: 'Solidity', icon: SiSolidity },
-      ]
-    },
-    {
-      title: 'Database',
-      color: 'from-purple-500 to-pink-500',
-      iconColor: 'text-purple-500',
-      skills: [
-        { name: 'MySQL', icon: SiMysql },
-        { name: 'PostgreSQL', icon: SiPostgresql },
-      ]
-    },
-    {
-      title: 'DevOps & Tools',
-      color: 'from-orange-500 to-red-500',
-      iconColor: 'text-orange-500',
-      skills: [
-        { name: 'AWS', icon: SiAmazonaws },
-        { name: 'Docker', icon: SiDocker },
-        { name: 'Git', icon: SiGit },
-        { name: 'GitHub', icon: SiGithub },
-        { name: 'Jenkins', icon: SiJenkins },
-      ]
-    }
+  const allSkills = [
+    { name: 'JavaScript', icon: SiJavascript, color: 'text-yellow-400' },
+    { name: 'React', icon: SiReact, color: 'text-cyan-400' },
+    { name: 'Node.js', icon: SiNodedotjs, color: 'text-green-500' },
+    { name: 'Python', icon: SiPython, color: 'text-blue-400' },
+    { name: 'Java', icon: FaJava, color: 'text-red-500' },
+    { name: 'MySQL', icon: SiMysql, color: 'text-blue-500' },
+    { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-blue-600' },
+    { name: 'AWS', icon: SiAmazonaws, color: 'text-orange-400' },
+    { name: 'Docker', icon: SiDocker, color: 'text-blue-500' },
+    { name: 'Git', icon: SiGit, color: 'text-orange-600' },
+    { name: 'Bootstrap', icon: SiBootstrap, color: 'text-purple-500' },
+    { name: 'HTML5', icon: SiHtml5, color: 'text-orange-500' },
+    { name: 'CSS3', icon: SiCss3, color: 'text-blue-500' },
+    { name: 'C', icon: FiCode, color: 'text-blue-600', isCustom: true },
+    { name: 'Solidity', icon: SiSolidity, color: 'text-gray-600' },
+    { name: 'GitHub', icon: SiGithub, color: 'text-gray-700 dark:text-gray-300' },
+    { name: 'Jenkins', icon: SiJenkins, color: 'text-red-600' },
+    { name: 'Linux', icon: SiLinux, color: 'text-yellow-500' },
   ]
 
   return (
@@ -70,14 +43,14 @@ const Skills = () => {
         className="container-custom w-full max-w-full"
       >
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
             className="text-4xl md:text-5xl font-bold mb-4"
           >
-            Skills & <span className="gradient-text">Expertise</span>
+            Skills & <span className="gradient-text">Technologies</span>
           </motion.h2>
           <motion.div
             initial={{ opacity: 0, scaleX: 0 }}
@@ -85,84 +58,51 @@ const Skills = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="w-20 h-1 bg-primary-500 mx-auto rounded-full"
           ></motion.div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+          >
+            Technologies and tools I work with to build exceptional digital experiences
+          </motion.p>
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-          {skillCategories.map((category, categoryIndex) => (
+        {/* Unified Skills Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6">
+          {allSkills.map((skill, index) => (
             <motion.div
-              key={category.title}
-              initial={{ opacity: 0, y: 50 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-              transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
-              className="p-5 sm:p-6 rounded-2xl bg-gray-50 dark:bg-dark-bg"
+              key={skill.name}
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              whileHover={{ scale: 1.1, y: -10 }}
+              className="group relative p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-white dark:from-dark-bg dark:to-dark-card shadow-lg hover:shadow-2xl transition-all cursor-default border border-gray-100 dark:border-gray-800"
             >
-              <h3 className={`text-xl sm:text-2xl font-bold mb-5 sm:mb-6 bg-gradient-to-r ${category.color} bg-clip-text text-transparent`}>
-                {category.title}
-              </h3>
+              {/* Hover Glow Effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-500/0 to-purple-500/0 group-hover:from-primary-500/10 group-hover:to-purple-500/10 transition-all duration-300"></div>
               
-              <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                    transition={{ duration: 0.5, delay: categoryIndex * 0.2 + skillIndex * 0.1 }}
-                    whileHover={{ scale: 1.05, y: -8 }}
-                    className="p-3 sm:p-4 rounded-xl bg-white dark:bg-dark-card shadow-lg hover:shadow-2xl transition-all cursor-default"
-                  >
-                    <div className="flex flex-col items-center gap-2 sm:gap-3 text-center">
-                      <motion.div
-                        whileHover={{ y: -4, scale: 1.15 }}
-                        transition={{ duration: 0.3, type: "spring", stiffness: 400, damping: 10 }}
-                      >
-                        {skill.isCustom && skill.name === 'C' ? (
-                          <div className={`text-4xl sm:text-5xl font-bold ${category.iconColor} hover:drop-shadow-lg transition-all flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-gradient-to-br from-blue-500/10 to-cyan-500/10`}>
-                            C
-                          </div>
-                        ) : (
-                          <skill.icon className={`text-4xl sm:text-5xl ${category.iconColor} hover:drop-shadow-lg transition-all`} />
-                        )}
-                      </motion.div>
-                      <span className="font-medium text-xs sm:text-sm">{skill.name}</span>
+              <div className="relative flex flex-col items-center gap-3 text-center">
+                <motion.div
+                  whileHover={{ scale: 1.15 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                  className="relative"
+                >
+                  {skill.isCustom && skill.name === 'C' ? (
+                    <div className={`text-5xl sm:text-6xl font-bold ${skill.color} drop-shadow-lg transition-all duration-300 group-hover:drop-shadow-2xl`}>
+                      C
                     </div>
-                  </motion.div>
-                ))}
+                  ) : (
+                    <skill.icon className={`text-5xl sm:text-6xl ${skill.color} drop-shadow-lg transition-all duration-300 group-hover:drop-shadow-2xl`} />
+                  )}
+                </motion.div>
+                <span className="font-semibold text-xs sm:text-sm text-gray-700 dark:text-gray-300 transition-colors duration-300 group-hover:text-primary-500">
+                  {skill.name}
+                </span>
               </div>
             </motion.div>
           ))}
         </div>
-
-        {/* Additional Skills Tags with Icons */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.6, delay: 1 }}
-          className="mt-10 sm:mt-12 text-center"
-        >
-          <h4 className="text-lg sm:text-xl font-semibold mb-5 sm:mb-6">Other Technologies</h4>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3 sm:gap-4">
-            {[
-              { name: 'Linux', icon: SiLinux },
-              { name: 'Microservices', icon: FiBox },
-              { name: 'REST APIs', icon: FiServer },
-            ].map((tech, index) => (
-              <motion.div
-                key={tech.name}
-                initial={{ opacity: 0, scale: 0 }}
-                animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-                transition={{ duration: 0.3, delay: 1 + index * 0.05 }}
-                whileHover={{ scale: 1.1, y: -5 }}
-                className="p-3 sm:p-4 rounded-xl bg-white dark:bg-dark-card shadow-md hover:shadow-xl transition-all cursor-default"
-              >
-                <div className="flex flex-col items-center gap-1.5 sm:gap-2">
-                  <tech.icon className="text-2xl sm:text-3xl text-primary-500" />
-                  <span className="text-[9px] sm:text-xs font-medium text-center leading-tight">{tech.name}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </motion.div>
     </section>
   )

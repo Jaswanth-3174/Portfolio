@@ -79,19 +79,34 @@ const Experience = () => {
   return (
     <section id="experience" className="section-padding bg-white dark:bg-dark-card w-full overflow-x-hidden">
       <div className="container-custom w-full max-w-full">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 uppercase tracking-wider text-center mb-2">
-            What I have done so far
-          </p>
-          <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] text-center mb-10">
-            Work Experience.
-          </h2>
-        </motion.div>
+        {/* Section Header */}
+        <div className="text-center mb-12 sm:mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-4xl md:text-5xl font-bold mb-4"
+          >
+            Work <span className="gradient-text">Experience</span>
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="w-20 h-1 bg-primary-500 mx-auto rounded-full"
+          ></motion.div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+          >
+            My professional journey and career highlights
+          </motion.p>
+        </div>
 
         <div className='mt-20 flex flex-col'>
           <VerticalTimeline>
