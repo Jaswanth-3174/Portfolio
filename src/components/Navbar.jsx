@@ -41,7 +41,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            &lt;J /&gt;
+            &lt;J/&gt;
           </motion.a>
 
           {/* Desktop Navigation */}
