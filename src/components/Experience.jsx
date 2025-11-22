@@ -55,36 +55,48 @@ const ExperienceCard = ({ experience }) => {
         </div>
       }
     >
-      <div>
-        <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
-        <p className='text-gray-300 text-[18px] font-semibold m-0'>
+      {/* Role and Company */}
+      <div className="mb-4">
+        <h3 className='text-white text-[24px] font-bold mb-1'>
+          {experience.title}
+        </h3>
+        <p className='text-gray-200 text-[17px] font-semibold mb-0.5'>
           {experience.company_name}
         </p>
         {experience.location && (
-          <p className='text-gray-400 text-[14px] mt-1'>{experience.location}</p>
-        )}
-        {experience.subtitle && (
-          <p className='text-gray-300 text-[15px] mt-2 italic'>{experience.subtitle}</p>
+          <p className='text-gray-400 text-[13px] font-light'>
+            {experience.location}
+          </p>
         )}
       </div>
 
-      <ul className='mt-5 list-disc ml-5 space-y-2'>
+      {/* Description */}
+      {experience.subtitle && (
+        <p className='text-gray-300 text-[15px] mb-4 leading-relaxed'>
+          {experience.subtitle}
+        </p>
+      )}
+
+      {/* Achievements */}
+      <ul className='mt-4 space-y-2'>
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className='text-white-100 text-[14px] pl-1 tracking-wider'
+            className='text-gray-300 text-[14px] leading-relaxed flex items-start'
           >
-            {point}
+            <span className="text-purple-400 mr-2 mt-1">•</span>
+            <span>{point}</span>
           </li>
         ))}
       </ul>
 
+      {/* Technologies */}
       {experience.technologies && (
-        <div className='mt-4 flex flex-wrap gap-2'>
+        <div className='mt-5 flex flex-wrap gap-2'>
           {experience.technologies.map((tech, index) => (
             <span
               key={`tech-${index}`}
-              className='px-3 py-1 text-[12px] font-medium bg-primary-500/20 text-primary-300 rounded-full'
+              className='px-3 py-1 text-[12px] font-medium bg-purple-500/15 text-purple-300 rounded-full'
             >
               {tech}
             </span>
