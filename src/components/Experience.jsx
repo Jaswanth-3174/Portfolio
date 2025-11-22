@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import React from 'react'
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -40,69 +41,88 @@ const experiences = [
 ]
 
 const ExperienceCard = ({ experience }) => {
+  const [isHovered, setIsHovered] = React.useState(false);
+
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "#1d1836",
+        background: isHovered ? "rgba(30, 30, 30, 0.9)" : "rgba(20, 20, 20, 0.8)",
         color: "#fff",
+        borderRadius: "12px",
+        border: isHovered ? "1px solid rgba(102, 126, 234, 0.5)" : "1px solid rgba(102, 126, 234, 0.15)",
+        boxShadow: isHovered 
+          ? "0 0 30px rgba(102, 126, 234, 0.4), 0 8px 32px rgba(0, 0, 0, 0.3)"
+          : "0 8px 32px rgba(0, 0, 0, 0.3)",
+        backdropFilter: "blur(10px)",
+        transition: "all 0.3s ease",
+        cursor: "pointer",
       }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      contentArrowStyle={{ borderRight: "7px solid rgba(20, 20, 20, 0.8)" }}
       date={experience.date}
-      iconStyle={{ background: experience.iconBg }}
+      iconStyle={{ 
+        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        boxShadow: "0 0 0 4px rgba(10, 10, 10, 0.8)"
+      }}
       icon={
         <div className='flex justify-center items-center w-full h-full'>
           <FiBriefcase className="w-[60%] h-[60%] text-white" />
         </div>
       }
     >
-      {/* Role and Company */}
-      <div className="mb-4">
-        <h3 className='text-white text-[24px] font-bold mb-1'>
+      <div 
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+      {/* Role and Company - Compact Header */}
+      <div className="mb-4" style={{ lineHeight: 0 }}>
+        <h3 className='text-white text-[20px] font-bold block m-0 p-0' style={{ lineHeight: '20px' }}>
           {experience.title}
         </h3>
-        <p className='text-gray-200 text-[17px] font-semibold mb-0.5'>
+        <p className='text-[16px] font-semibold text-gray-200 block m-0 p-0' style={{ lineHeight: '16px' }}>
           {experience.company_name}
         </p>
         {experience.location && (
-          <p className='text-gray-400 text-[13px] font-light'>
+          <p className='text-gray-400 text-[14px] block m-0 p-0' style={{ lineHeight: '14px' }}>
             {experience.location}
+          </p>
+        )}
+        {experience.subtitle && (
+          <p className='text-gray-400 text-[14px] leading-relaxed mt-3 mb-0'>
+            {experience.subtitle}
           </p>
         )}
       </div>
 
-      {/* Description */}
-      {experience.subtitle && (
-        <p className='text-gray-300 text-[15px] mb-4 leading-relaxed'>
-          {experience.subtitle}
-        </p>
-      )}
-
       {/* Achievements */}
-      <ul className='mt-4 space-y-2'>
+      <ul className='space-y-2 mb-3'>
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className='text-gray-300 text-[14px] leading-relaxed flex items-start'
+            className='text-gray-300 text-[14px] leading-relaxed pl-4 relative'
           >
-            <span className="text-purple-400 mr-2 mt-1">•</span>
-            <span>{point}</span>
+            <span className="absolute left-0 top-1.5 w-1.5 h-1.5 bg-primary-500 rounded-full"></span>
+            {point}
           </li>
         ))}
       </ul>
 
       {/* Technologies */}
       {experience.technologies && (
-        <div className='mt-5 flex flex-wrap gap-2'>
+        <div className='flex flex-wrap gap-2 pt-3 border-t border-white/10'>
           {experience.technologies.map((tech, index) => (
             <span
               key={`tech-${index}`}
-              className='px-3 py-1 text-[12px] font-medium bg-purple-500/15 text-purple-300 rounded-full'
+              className='px-3 py-1.5 text-[12px] font-semibold rounded-lg border border-primary-400/40 hover:border-primary-400/70 transition-all duration-300 bg-gradient-to-r from-primary-500/15 to-purple-500/15'
+              style={{
+                color: '#a78bfa'
+              }}
             >
               {tech}
             </span>
           ))}
         </div>
       )}
+      </div>
     </VerticalTimelineElement>
   );
 };
