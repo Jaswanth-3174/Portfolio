@@ -5,7 +5,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { FiBriefcase } from 'react-icons/fi'
+import zohoLogo from '../assets/zoho_logo.png'
 
 const experiences = [
   {
@@ -60,12 +60,12 @@ const ExperienceCard = ({ experience }) => {
       contentArrowStyle={{ borderRight: "7px solid rgba(20, 20, 20, 0.8)" }}
       date={experience.date}
       iconStyle={{ 
-        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        background: "#ffffff",
         boxShadow: "0 0 0 4px rgba(10, 10, 10, 0.8)"
       }}
       icon={
-        <div className='flex justify-center items-center w-full h-full'>
-          <FiBriefcase className="w-[60%] h-[60%] text-white" />
+        <div className='flex justify-center items-center w-full h-full overflow-hidden rounded-full'>
+          <img src={zohoLogo} alt="Zoho Corp" className="w-[95%] h-[95%] object-contain" />
         </div>
       }
     >

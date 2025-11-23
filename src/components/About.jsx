@@ -26,8 +26,8 @@ const About = () => {
     },
     {
       icon: FiCloud,
-      title: 'Cloud Architecture',
-      description: 'Experience deploying and managing applications on AWS, Azure, and Google Cloud.',
+      title: 'Cloud & Deployment',
+      description: 'Experience deploying applications on Vercel, GitHub Pages, and AWS with modern CI/CD practices.',
     },
     {
       icon: FiTool,
@@ -91,7 +91,7 @@ const About = () => {
             className="px-4 sm:px-0"
           >
             <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-              I'm a Software Development Engineer
+              I'm a Software Developer
             </h3>
             <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
               With a passion for creating elegant solutions to complex problems, I specialize
@@ -107,7 +107,7 @@ const About = () => {
             </p>
             
             <div className="flex flex-wrap gap-3">
-              {['Node.js', 'Java', 'AWS', 'Python', 'MySQL', 'React.js'].map((tech, index) => (
+              {['Java', 'MySQL', 'Javascript','Node.js', 'React.js','AWS'].map((tech, index) => (
                 <motion.span
                   key={tech}
                   initial={{ opacity: 0, scale: 0 }}

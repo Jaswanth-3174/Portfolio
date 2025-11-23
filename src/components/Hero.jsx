@@ -4,7 +4,7 @@ import { ComputersCanvas } from './canvas'
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-screen mx-auto">
+    <section id="home" className="relative w-full h-screen mx-auto">
       {/* Background gradient orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-10 w-72 h-72 bg-primary-500/20 rounded-full blur-3xl animate-pulse"></div>
