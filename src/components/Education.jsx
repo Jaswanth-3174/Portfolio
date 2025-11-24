@@ -173,9 +173,9 @@ const Education = () => {
           <h3 className="text-2xl font-bold mb-6">Certifications & Courses</h3>
           <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
             {[
-              'Multicloud Architect Professional',
-              'Data Structures & Algorithms',
-              'Generative AI',
+              'Oracle Cloud Infrastructure 2025 Certified Multicloud Architect Professional',
+              'Problem solving - HackerRank',
+              'Generative AI Professional - Oracle',
             ].map((cert, index) => (
               <motion.div
                 key={cert}
@@ -185,9 +185,9 @@ const Education = () => {
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="p-4 rounded-xl bg-white dark:bg-dark-card shadow-md hover:shadow-lg transition-all"
               >
-                <div className="flex items-center justify-center gap-2">
-                  <FiAward className="text-primary-500 text-xl" />
-                  <span className="font-medium text-sm">{cert}</span>
+                <div className="flex flex-col items-center justify-center gap-2 text-center">
+                  <FiAward className="text-primary-500 text-2xl flex-shrink-0" />
+                  <span className="font-medium text-sm leading-snug">{cert}</span>
                 </div>
               </motion.div>
             ))}

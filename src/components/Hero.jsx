@@ -23,14 +23,16 @@ const Hero = () => {
           <h1 className="font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2">
             Hi, I'm <span className='bg-gradient-to-r from-primary-600 via-purple-600 to-pink-600 bg-clip-text text-transparent'>Jaswanth</span>
           </h1>
-          <p className="text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] mt-2">
-            Software developer <br className='sm:block hidden' />
-            Building scalable applications.
+          <p className="text-[#dfd9ff] font-semibold lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] mt-2">
+            Software Development Engineer
+          </p>
+          <p className="text-[#dfd9ff]/80 font-light lg:text-[24px] sm:text-[20px] xs:text-[16px] text-[14px] lg:leading-[36px] mt-3">
+            Transforming ideas into elegant digital solutions
           </p>
         </div>
       </div>
 
-      <div className="lg:absolute lg:right-[10%] lg:top-0 lg:w-1/2 lg:h-full">
+      <div className="mt-20 lg:mt-0 lg:absolute lg:right-[5%] lg:top-0 lg:w-1/2 lg:h-full">
         <ComputersCanvas />
       </div>
 
