@@ -7,26 +7,26 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi'
 const projects = [
   {
     name: 'MediTrustChain',
-    description: 'A decentralized healthcare data system called MediTrustChain using Ethereum, IPFS, MetaMask, and React.js. The system must allow patients to upload encrypted medical records to IPFS, store the content hash on Ethereum, and manage access control via smart contracts enabling seamless decentralized data management for improved patient-centric interoperability.',
+    description: 'A decentralized healthcare data system called MediTrustChain using Ethereum, IPFS, MetaMask, and React.js. The system must allow patients to upload encrypted medical records to IPFS, store the content hash on Ethereum, and manage access control via smart contracts.',
     tags: [
       { name: 'React.js', color: 'blue-text-gradient' },
       { name: 'Node.js', color: 'green-text-gradient' },
       { name: 'Ganache', color: 'pink-text-gradient' },
     ],
-    image: '🛒',
+    image: '🏥',
     source_code_link: 'https://github.com/Jaswanth-3174/MediTrustChain',
     // live_link: 'https://example.com'
   },
   {
     name: 'Robudz Play School',
-    description: 'We warmly welcome you and your Bud to ROBUDZ PLAY SCHOOL. Our mission is to provide a safe, joyful, and stimulating environment for Buds aged 2–6 years, in line with the Early Buds Care & Education (ECCE) Policy, 2013 by the Government of India.',
+    description: 'Welcome to Robudz Play School - where every Buds shines bright through creative learning, joyful discovery, and endless possibilities!',
     tags: [
       { name: 'React.js', color: 'blue-text-gradient' },
       { name: 'Tailwind-css', color: 'green-text-gradient' },
       { name: 'Node.js', color: 'pink-text-gradient' },
     ],
-    image: '📋',
-    source_code_link: 'https://github.com/Jaswanth-3174',
+    image: '🏫',
+    source_code_link: 'https://github.com/Jaswanth-3174/playschool',
     live_link: 'https://www.robudzplayschool.in/'
   },
   {
@@ -37,43 +37,43 @@ const projects = [
       { name: 'Ethereum', color: 'green-text-gradient' },
       { name: 'Solidity', color: 'pink-text-gradient' },
     ],
-    image: '🔌',
-    source_code_link: 'https://github.com/Jaswanth-3174',
+    image: '🗂️',
+    source_code_link: 'https://github.com/Jaswanth-3174/File-Cryp',
   },
   {
-    name: 'Social Media Dashboard',
-    description: 'Analytics dashboard for tracking social media metrics across multiple platforms with beautiful data visualization and real-time updates.',
+    name: 'Peer-to-peer Data lake analytics',
+    description: 'A fully decentralized analytics framework that runs entirely locally without cloud dependencies. Built with React.js, Tailwind CSS, Recharts for the frontend and Python FastAPI with DuckDB for the backend.',
     tags: [
-      { name: 'React', color: 'blue-text-gradient' },
+      { name: 'DuckDB', color: 'blue-text-gradient' },
       { name: 'Python', color: 'green-text-gradient' },
       { name: 'FastAPI', color: 'pink-text-gradient' },
     ],
     image: '📊',
-    source_code_link: 'https://github.com/Jaswanth-3174',
-    live_link: 'https://example.com'
+    source_code_link: 'https://github.com/Jaswanth-3174/Peer-to-peer-Data-lake-analytics',
+    // live_link: 'https://example.com'
   },
   {
-    name: 'Mobile Fitness App',
-    description: 'Cross-platform fitness tracking app with workout plans, progress tracking, and community features. Built with React Native for iOS and Android.',
+    name: 'AuthChain',
+    description: 'A decentralized digital identity platform built on blockchain to authenticate users and devices securely. The system leverages cryptographic hashing and immutable records to enhance security, minimize fraud, and protect identity data during online transactions.',
     tags: [
-      { name: 'React Native', color: 'blue-text-gradient' },
-      { name: 'Firebase', color: 'green-text-gradient' },
-      { name: 'Redux', color: 'pink-text-gradient' },
+      { name: 'Solidity', color: 'blue-text-gradient' },
+      { name: 'Ethereum', color: 'green-text-gradient' },
+      { name: 'Javascript', color: 'pink-text-gradient' },
     ],
-    image: '💪',
+    image: '🛡️',
     source_code_link: 'https://github.com/Jaswanth-3174',
   },
   {
-    name: 'Cloud Storage Solution',
-    description: 'Secure file storage and sharing platform with encryption, versioning, and collaborative editing features. Integrated with AWS services.',
+    name: 'RideNow CLI',
+    description: 'RideNow CLI is a console-based taxi booking system built using Core Java. It implements ride matching, fare calculation, and user/driver management using OOP principles and efficient data structures for a smooth simulated booking experience, improving overall system usability.',
     tags: [
-      { name: 'Next.js', color: 'blue-text-gradient' },
-      { name: 'AWS', color: 'green-text-gradient' },
-      { name: 'Lambda', color: 'pink-text-gradient' },
+      { name: 'Core Java', color: 'blue-text-gradient' },
+      { name: 'OOPS', color: 'green-text-gradient' },
+      { name: 'MySQL', color: 'pink-text-gradient' },
     ],
-    image: '☁️',
+    image: '🚕',
     source_code_link: 'https://github.com/Jaswanth-3174',
-    live_link: 'https://example.com'
+    // live_link: 'https://example.com'
   }
 ]
 
@@ -174,7 +174,7 @@ const Projects = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
           >
-            Real-world projects showcasing problem-solving and technical expertise
+            Where innovation meets implementation
           </motion.p>
         </div>
 
@@ -185,11 +185,7 @@ const Projects = () => {
           transition={{ duration: 1, delay: 0.1 }}
           className='mt-8 text-gray-600 dark:text-gray-400 text-base sm:text-lg max-w-4xl mx-auto text-center leading-relaxed'
         >
-          Following projects showcase my skills and experience through
-          real-world examples of my work. Each project is briefly described with
-          links to code repositories and live demos. It reflects my
-          ability to solve complex problems, work with different technologies,
-          and manage projects effectively.
+          A showcase of innovative solutions built to solve real-world challenges. Each project demonstrates technical excellence, creative problem-solving, and a commitment to delivering impactful results.
         </motion.p>
 
         <div className='mt-20 flex flex-wrap gap-7 justify-center'>

@@ -29,14 +29,13 @@ const experiences = [
     location: 'Madurai, India',
     iconBg: '#8b5cf6',
     date: 'May 2025 - June 2025',
-    subtitle: 'Contributed to client projects and learned modern web development practices',
+    subtitle: 'Zoho Analytics - Client Framework',
     points: [
-      'Delivered 15+ client projects with 100% on-time delivery rate',
-      'Improved website performance scores by implementing optimization techniques',
-      'Participated in code reviews and adopted industry best practices',
-      'Assisted in training new interns and creating documentation',
+      'Engineered Java-based data extraction tools to parse and derive insights from complex key-value structures and deeply nested directories',
+      'Implemented CI/CD pipelines via Jenkins and GitHub, and containerized environments with Docker',
+      'Architected full-stack SQL query interface leveraging Monaco Editor for frontend and Trino CLI for distributed query execution across large-scale datasets',
     ],
-    technologies: ['JavaScript', 'Java', 'SQL', 'Jenkins', 'Zoho Analytics'],
+    technologies: ['Java', 'JavaScript', 'Jenkins', 'Docker', 'Zoho Analytics'],
   },
 ]
 
