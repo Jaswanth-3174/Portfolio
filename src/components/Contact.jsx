@@ -45,7 +45,7 @@ const Contact = () => {
     {
       icon: FiMapPin,
       title: 'Location',
-      value: 'India',
+      value: 'Chennai, India',
       link: null
     }
   ]

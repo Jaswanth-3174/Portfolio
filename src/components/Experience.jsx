@@ -13,7 +13,7 @@ const experiences = [
     company_name: 'Zoho Corp',
     location: 'Chennai, India',
     iconBg: '#667eea',
-    date: 'November 2025 - Present',
+    date: 'December 2025 - Present',
     subtitle: 'Backend Developer Trainee – Zoho (ManageEngine Division)',
     points: [
       'Developed 10+ features for the main product increasing user engagement by 40%',

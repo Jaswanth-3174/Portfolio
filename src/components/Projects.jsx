@@ -6,36 +6,36 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi'
 
 const projects = [
   {
-    name: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce solution with real-time inventory management, payment processing, and admin dashboard. Built with modern technologies for optimal performance.',
+    name: 'MediTrustChain',
+    description: 'A decentralized healthcare data system called MediTrustChain using Ethereum, IPFS, MetaMask, and React.js. The system must allow patients to upload encrypted medical records to IPFS, store the content hash on Ethereum, and manage access control via smart contracts enabling seamless decentralized data management for improved patient-centric interoperability.',
     tags: [
-      { name: 'React', color: 'blue-text-gradient' },
+      { name: 'React.js', color: 'blue-text-gradient' },
       { name: 'Node.js', color: 'green-text-gradient' },
-      { name: 'MongoDB', color: 'pink-text-gradient' },
+      { name: 'Ganache', color: 'pink-text-gradient' },
     ],
     image: '🛒',
-    source_code_link: 'https://github.com/Jaswanth-3174',
-    live_link: 'https://example.com'
+    source_code_link: 'https://github.com/Jaswanth-3174/MediTrustChain',
+    // live_link: 'https://example.com'
   },
   {
-    name: 'Task Management System',
-    description: 'Collaborative project management tool with real-time updates, team collaboration features, and analytics dashboard for tracking project progress.',
+    name: 'Robudz Play School',
+    description: 'We warmly welcome you and your Bud to ROBUDZ PLAY SCHOOL. Our mission is to provide a safe, joyful, and stimulating environment for Buds aged 2–6 years, in line with the Early Buds Care & Education (ECCE) Policy, 2013 by the Government of India.',
     tags: [
-      { name: 'Vue.js', color: 'blue-text-gradient' },
-      { name: 'Express', color: 'green-text-gradient' },
-      { name: 'PostgreSQL', color: 'pink-text-gradient' },
+      { name: 'React.js', color: 'blue-text-gradient' },
+      { name: 'Tailwind-css', color: 'green-text-gradient' },
+      { name: 'Node.js', color: 'pink-text-gradient' },
     ],
     image: '📋',
     source_code_link: 'https://github.com/Jaswanth-3174',
-    live_link: 'https://example.com'
+    live_link: 'https://www.robudzplayschool.in/'
   },
   {
-    name: 'RESTful API Service',
-    description: 'Scalable microservices architecture with authentication, rate limiting, and comprehensive API documentation. Deployed with Docker containers.',
+    name: 'FileCryp',
+    description: 'A decentralized file storage system using IPFS and blockchain ensures secure, tamper-proof data storage by distributing files across peer-to-peer nodes. Blockchain maintains immutable records of file ownership and access, enabling verification and retrieval.',
     tags: [
-      { name: 'Node.js', color: 'blue-text-gradient' },
-      { name: 'Docker', color: 'green-text-gradient' },
-      { name: 'Redis', color: 'pink-text-gradient' },
+      { name: 'IPFS', color: 'blue-text-gradient' },
+      { name: 'Ethereum', color: 'green-text-gradient' },
+      { name: 'Solidity', color: 'pink-text-gradient' },
     ],
     image: '🔌',
     source_code_link: 'https://github.com/Jaswanth-3174',
@@ -112,6 +112,19 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
           <p className='mt-2 text-secondary text-[14px]'>{description}</p>
         </div>
 
+        {live_link && (
+          <div className='mt-4'>
+            <motion.button
+              onClick={() => window.open(live_link, "_blank")}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className='flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-500/20 text-white hover:bg-primary-500/30 transition-colors'
+            >
+              <FiExternalLink /> Live
+            </motion.button>
+          </div>
+        )}
+
         <div className='mt-4 flex flex-wrap gap-2'>
           {tags.map((tag) => (
             <p
@@ -122,19 +135,6 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
             </p>
           ))}
         </div>
-
-        {live_link && (
-          <div className='mt-4'>
-            <motion.button
-              onClick={() => window.open(live_link, "_blank")}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className='flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-500/20 text-white hover:bg-primary-500/30 transition-colors'
-            >
-              <FiExternalLink /> Live Demo
-            </motion.button>
-          </div>
-        )}
       </Tilt>
     </motion.div>
   )
