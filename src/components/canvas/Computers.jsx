@@ -31,6 +31,7 @@ const Computers = ({ isMobile }) => {
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Add a listener for changes to the screen size
@@ -54,24 +55,27 @@ const ComputersCanvas = () => {
   }, []);
 
   return (
-    <Canvas
-      frameloop='demand'
-      shadows
-      dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
-        <Computers isMobile={isMobile} />
-      </Suspense>
+    <div className={`w-full h-full transition-all duration-500 ${isLoading ? 'lg:!absolute lg:!left-1/2 lg:!-translate-x-1/2 lg:!right-auto' : ''}`}>
+      <Canvas
+        frameloop='demand'
+        shadows
+        dpr={[1, 2]}
+        camera={{ position: [20, 3, 5], fov: 25 }}
+        gl={{ preserveDrawingBuffer: true }}
+        onCreated={() => setTimeout(() => setIsLoading(false), 100)}
+      >
+        <Suspense fallback={<CanvasLoader />}>
+          <OrbitControls
+            enableZoom={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+          <Computers isMobile={isMobile} />
+        </Suspense>
 
-      <Preload all />
-    </Canvas>
+        <Preload all />
+      </Canvas>
+    </div>
   );
 };
 

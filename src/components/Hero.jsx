@@ -32,7 +32,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="mt-20 lg:mt-0 lg:absolute lg:right-[5%] lg:top-0 lg:w-1/2 lg:h-full">
+      <div className="mt-20 lg:mt-0 lg:absolute lg:right-[5%] lg:top-0 lg:w-1/2 lg:h-full flex items-center justify-center">
         <ComputersCanvas />
       </div>
 

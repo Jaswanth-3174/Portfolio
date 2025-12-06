@@ -9,7 +9,7 @@ const About = () => {
   const stats = [
     { label: 'Years Experience', value: '2+' },
     { label: 'Projects Completed', value: '10+' },
-    { label: 'Technologies', value: '15+' },
+    { label: 'Technologies', value: '20+' },
     // { label: 'Happy Clients', value: '30+' },
   ]
 
@@ -65,6 +65,7 @@ const About = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center mb-12 sm:mb-16">
           {/* Left - Image/Illustration */}
+          {/* TODO: Uncomment when profile image is available
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
@@ -82,16 +83,17 @@ const About = () => {
             </div>
             <div className="absolute -z-10 -top-4 -right-4 w-full h-full rounded-2xl bg-primary-500/20 blur-xl"></div>
           </motion.div>
+          */}
 
           {/* Right - Description */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="px-4 sm:px-0"
+            className="px-4 sm:px-0 lg:col-span-2"
           >
             <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-              I'm a Software Developer
+              I'm a Software Development Engineer
             </h3>
             <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
               With a passion for creating elegant solutions to complex problems, I specialize
@@ -107,7 +109,7 @@ const About = () => {
             </p>
             
             <div className="flex flex-wrap gap-3">
-              {['Java', 'MySQL', 'Javascript','Node.js', 'React.js','AWS'].map((tech, index) => (
+              {['Java', 'MySQL', 'Javascript','Node.js', 'REST API','AWS'].map((tech, index) => (
                 <motion.span
                   key={tech}
                   initial={{ opacity: 0, scale: 0 }}

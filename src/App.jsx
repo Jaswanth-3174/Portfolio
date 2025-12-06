@@ -10,6 +10,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function App() {
+  // Light mode temporarily disabled - dark mode only
   const [darkMode, setDarkMode] = useState(true)
   const [isLoading, setIsLoading] = useState(true)
 
@@ -17,21 +18,27 @@ function App() {
     // Simulate loading
     setTimeout(() => setIsLoading(false), 1500)
 
-    // Check for saved theme preference or default to dark mode
-    const savedTheme = localStorage.getItem('theme')
-    if (savedTheme) {
-      setDarkMode(savedTheme === 'dark')
-    }
+    // Force dark mode
+    // TODO: Uncomment below for light mode support
+    // const savedTheme = localStorage.getItem('theme')
+    // if (savedTheme) {
+    //   setDarkMode(savedTheme === 'dark')
+    // }
   }, [])
 
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-      localStorage.setItem('theme', 'light')
-    }
+    // Force dark mode always
+    document.documentElement.classList.add('dark')
+    localStorage.setItem('theme', 'dark')
+    
+    // TODO: Uncomment below for light mode support
+    // if (darkMode) {
+    //   document.documentElement.classList.add('dark')
+    //   localStorage.setItem('theme', 'dark')
+    // } else {
+    //   document.documentElement.classList.remove('dark')
+    //   localStorage.setItem('theme', 'light')
+    // }
   }, [darkMode])
 
   if (isLoading) {

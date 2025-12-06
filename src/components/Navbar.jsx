@@ -60,7 +60,8 @@ const Navbar = ({ darkMode, setDarkMode }) => {
               </motion.a>
             ))}
             
-            {/* Theme Toggle */}
+            {/* Theme Toggle - Temporarily disabled (dark mode only) */}
+            {/* TODO: Uncomment for light mode support
             <motion.button
               onClick={() => setDarkMode(!darkMode)}
               className="p-2 rounded-lg bg-gray-200 dark:bg-dark-border hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
@@ -69,10 +70,13 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             >
               {darkMode ? <FiSun className="text-xl" /> : <FiMoon className="text-xl" />}
             </motion.button>
+            */}
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-4">
+            {/* Theme Toggle - Temporarily disabled (dark mode only) */}
+            {/* TODO: Uncomment for light mode support
             <motion.button
               onClick={() => setDarkMode(!darkMode)}
               className="p-2 rounded-lg bg-gray-200 dark:bg-dark-border"
@@ -80,6 +84,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             >
               {darkMode ? <FiSun className="text-xl" /> : <FiMoon className="text-xl" />}
             </motion.button>
+            */}
             
             <motion.button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

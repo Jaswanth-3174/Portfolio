@@ -8,32 +8,32 @@ const Education = () => {
 
   const education = [
     {
-      degree: 'Master of Technology in Computer Science',
+      degree: 'Master of Technology in Computer Science (Integrated)',
       institution: 'Sri Krishna College of Engineering and Technology - SKCET',
       location: 'Coimbatore, India',
       period: '2021 - 2026',
       grade: 'CGPA: 8.1/10',
-      description: 'Focused on software engineering, data structures, algorithms, and full-stack development.',
+      description: 'Executive Member, Dept. of M.Tech CSE – organized workshops, technical events, and coding competitions.',
       achievements: [
-        'Dean\'s List for Academic Excellence',
-        'Led final year project on distributed systems',
-        'Active member of coding club',
+        'Participated in various national and intra-college hackathons, with wins and finalist positions',
+        'Contributed to successful execution of department symposiums and coding events',
+        'Gained hands-on experience in real-world problem solving and collaborative team projects',
       ],
       color: 'from-blue-500 to-cyan-500'
     },
-    {
-      degree: 'Higher Secondary Education',
-      institution: 'Velammal Vidyalaya',
-      location: 'Madurai, India',
-      period: '2019 - 2021',
-      grade: 'Percentage: 83%',
-      description: 'Specialized in Mathematics, Physics, and Computer Science.',
-      achievements: [
-        'School topper in Computer Science',
-        'Participated in national coding competitions',
-      ],
-      color: 'from-purple-500 to-pink-500'
-    },
+    // {
+    //   degree: 'Higher Secondary Education',
+    //   institution: 'Velammal Vidyalaya',
+    //   location: 'Madurai, India',
+    //   period: '2019 - 2021',
+    //   grade: 'Percentage: 83%',
+    //   description: 'Specialized in Mathematics, Physics, and Computer Science.',
+    //   achievements: [
+    //     'School topper in Computer Science',
+    //     'Participated in national coding competitions',
+    //   ],
+    //   color: 'from-purple-500 to-pink-500'
+    // },
   ]
 
   return (
