@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { FiMail, FiPhone, FiMapPin, FiSend, FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi'
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
+  const formRef = useRef()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,14 +27,34 @@ const Contact = () => {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
+    try {
+      // TODO: Replace these with your EmailJS credentials
+      const serviceId = 'service_0x615mc'
+      const templateId = 'template_jbs86do'
+      const publicKey = '3o1X2O4b65WJOey6_'
+      
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 's.jaswanth2004@gmail.com'
+        },
+        publicKey
+      )
+      
       setSubmitStatus('success')
       setFormData({ name: '', email: '', subject: '', message: '' })
-      
+    } catch (error) {
+      console.error('Email send failed:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
       setTimeout(() => setSubmitStatus(null), 5000)
-    }, 2000)
+    }
   }
 
   const contactInfo = [
@@ -274,6 +296,16 @@ const Contact = () => {
                   className="p-4 rounded-lg bg-green-500/10 text-green-500 text-center"
                 >
                   ✓ Message sent successfully! I'll get back to you soon.
+                </motion.div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="p-4 rounded-lg bg-red-500/10 text-red-500 text-center"
+                >
+                  ✗ Failed to send message. Please try again or email me directly at s.jaswanth2004@gmail.com
                 </motion.div>
               )}
             </form>

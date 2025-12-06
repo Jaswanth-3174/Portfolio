@@ -90,7 +90,7 @@ const About = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="px-4 sm:px-0 lg:col-span-2"
+            className="px-4 sm:px-0 lg:col-span-2 max-w-4xl mx-auto text-center"
           >
             <h3 className="text-2xl sm:text-3xl font-bold mb-4">
               I'm a Software Development Engineer
@@ -108,7 +108,7 @@ const About = () => {
               real impact.
             </p>
             
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 justify-center">
               {['Java', 'MySQL', 'Javascript','Node.js', 'REST API','AWS'].map((tech, index) => (
                 <motion.span
                   key={tech}
