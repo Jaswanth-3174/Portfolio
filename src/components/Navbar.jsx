@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { FiMenu, FiX, FiSun, FiMoon } from 'react-icons/fi'
 import { motion, AnimatePresence } from 'framer-motion'
+import logo from '../assets/J.png'
 
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -37,11 +38,11 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           {/* Logo */}
           <motion.a
             href="#home"
-            className="text-xl sm:text-2xl font-bold gradient-text font-mono"
+            className="flex items-center"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            &lt;J/&gt;
+            <img src={logo} alt="Jaswanth" className="h-10 w-10 md:h-12 md:w-12 object-contain" />
           </motion.a>
 
           {/* Desktop Navigation */}

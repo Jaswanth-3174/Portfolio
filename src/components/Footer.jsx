@@ -31,7 +31,7 @@ const Footer = () => {
               className="text-2xl font-bold gradient-text font-mono inline-block mb-4"
               whileHover={{ scale: 1.05 }}
             >
-              &lt;SDE /&gt;
+              &lt;J/&gt;
             </motion.a>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Building innovative solutions with passion and dedication.
@@ -77,22 +77,18 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Stay Connected</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Get updates about my latest projects and blog posts.
+              Follow me on Medium for articles on software development, tech insights, and project updates.
             </p>
-            <div className="flex gap-2">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-2 rounded-lg bg-gray-100 dark:bg-dark-bg border border-gray-300 dark:border-dark-border focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-sm"
-              />
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-4 py-2 rounded-lg bg-primary-500 text-white font-medium hover:bg-primary-600 transition-colors"
-              >
-                Subscribe
-              </motion.button>
-            </div>
+            <motion.a
+              href="https://medium.com/@s.jaswanth2004"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary-500 text-white font-medium hover:bg-primary-600 transition-colors"
+            >
+              Follow on Medium →
+            </motion.a>
           </div>
         </div>
 

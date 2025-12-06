@@ -2,6 +2,7 @@ import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { FiMail, FiPhone, FiMapPin, FiSend, FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi'
+import { SiMedium } from 'react-icons/si'
 import emailjs from '@emailjs/browser'
 
 const Contact = () => {
@@ -75,6 +76,7 @@ const Contact = () => {
   const socialLinks = [
     { icon: FiGithub, href: 'https://github.com/Jaswanth-3174', label: 'GitHub' },
     { icon: FiLinkedin, href: 'https://www.linkedin.com/in/jaswanths2004/', label: 'LinkedIn' },
+    { icon: SiMedium, href: 'https://medium.com/@s.jaswanth2004', label: 'Medium' },
     // { icon: FiTwitter, href: 'https://twitter.com', label: 'Twitter' }
   ]
 
