@@ -55,7 +55,7 @@ const ComputersCanvas = () => {
   }, []);
 
   return (
-    <div className={`w-full h-full transition-all duration-500 ${isLoading ? 'lg:!absolute lg:!left-1/2 lg:!-translate-x-1/2 lg:!right-auto' : ''}`}>
+    <div className={`w-full h-full transition-all duration-500 ${isLoading ? 'lg:!absolute lg:!left-1/2 lg:!-translate-x-1/2 lg:!right-auto' : ''}`} style={{ touchAction: 'none' }}>
       <Canvas
         frameloop='demand'
         shadows
@@ -63,12 +63,14 @@ const ComputersCanvas = () => {
         camera={{ position: [20, 3, 5], fov: 25 }}
         gl={{ preserveDrawingBuffer: true }}
         onCreated={() => setTimeout(() => setIsLoading(false), 100)}
+        style={{ pointerEvents: 'auto' }}
       >
         <Suspense fallback={<CanvasLoader />}>
           <OrbitControls
             enableZoom={false}
             maxPolarAngle={Math.PI / 2}
             minPolarAngle={Math.PI / 2}
+            enablePan={false}
           />
           <Computers isMobile={isMobile} />
         </Suspense>
