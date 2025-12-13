@@ -32,8 +32,8 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full h-[50%] lg:absolute lg:right-[5%] lg:top-0 lg:left-auto lg:w-1/2 lg:h-full flex items-end lg:items-center justify-center z-20">
-        <div className="w-full h-full max-h-[400px] lg:max-h-none">
+      <div className="absolute top-[320px] left-0 w-full h-[calc(100%-320px)] lg:absolute lg:right-[5%] lg:top-0 lg:left-auto lg:w-1/2 lg:h-full flex items-start pt-10 lg:pt-0 lg:items-center justify-center z-20">
+        <div className="w-full h-full max-h-[500px] lg:max-h-none">
           <ComputersCanvas />
         </div>
       </div>
