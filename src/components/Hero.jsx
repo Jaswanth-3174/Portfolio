@@ -13,7 +13,7 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="absolute inset-0 top-[120px] max-w-7xl mx-auto px-6 sm:px-16 flex flex-row items-start gap-5">
+      <div className="absolute inset-0 top-[120px] max-w-7xl mx-auto px-6 sm:px-16 flex flex-row items-start gap-5 z-10">
         <div className='flex flex-col justify-center items-center mt-5'>
           <div className='w-5 h-5 rounded-full bg-primary-500' />
           <div className='w-1 sm:h-80 h-40 violet-gradient' />
@@ -32,8 +32,10 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="mt-20 lg:mt-0 lg:absolute lg:right-[5%] lg:top-0 lg:w-1/2 lg:h-full flex items-center justify-center">
-        <ComputersCanvas />
+      <div className="absolute bottom-0 left-0 w-full h-[50%] lg:relative lg:right-[5%] lg:top-0 lg:w-1/2 lg:h-full flex items-end lg:items-center justify-center pointer-events-none">
+        <div className="w-full h-full max-h-[400px] lg:max-h-none">
+          <ComputersCanvas />
+        </div>
       </div>
 
       <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
